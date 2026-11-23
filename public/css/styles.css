@@ -755,7 +755,7 @@ img {
     width: 100%;
   }
 
-  .nav-links {
+  .site-header--home .nav-links {
     justify-content: center;
   }
 
