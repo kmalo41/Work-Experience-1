@@ -704,6 +704,11 @@ img {
   margin: 0;
 }
 
+#honeypot,
+#timeTaken {
+  display: none;
+}
+
 /* Footer */
 
 .site-footer {

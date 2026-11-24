@@ -33,3 +33,14 @@ form.addEventListener('submit', async (event) => {
     button.disabled = false;
   }
 });
+
+let formLoadTime = new Date().getTime();
+    document.getElementById('contact-form').onsubmit = function() {
+        let formSubmitTime = new Date().getTime();
+        let timeTaken = formSubmitTime - formLoadTime;
+        if (timeTaken < 6000) {
+          // console.log(timeTaken)
+          document.getElementById('timeTaken').value = false;
+        } else 
+          document.getElementById('timeTaken').value = true;
+    }
