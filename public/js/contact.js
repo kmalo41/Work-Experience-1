@@ -12,16 +12,16 @@ form.addEventListener('submit', async (event) => {
   statusEl.className = 'form-status';
   
   const data = Object.fromEntries(new FormData(form));
-  const honeypot = document.getElementById('honeypot').value;
+  const website = document.getElementById('website').value;
 
   let formSubmitTime = new Date().getTime();
   let timeTaken = formSubmitTime - formLoadTime;
   
-  // if honeypot has value or if the time sub is less than 3k then return
-  if (timeTaken < 3000 || honeypot) {
+  if (timeTaken < 3000 || website) {
     form.reset();
     statusEl.textContent = "Thanks, we'll be in touch within one business day.";
     statusEl.classList.add('form-status--success');
+    button.disabled = false;
     return
   }
   
