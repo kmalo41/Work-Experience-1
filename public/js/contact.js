@@ -1,4 +1,4 @@
-let formLoadTime = new Date().getTime();
+let formLoadTime = Date.now();
 
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
@@ -12,19 +12,8 @@ form.addEventListener('submit', async (event) => {
   statusEl.className = 'form-status';
   
   const data = Object.fromEntries(new FormData(form));
-  const website = document.getElementById('website').value;
+  data.timeTaken = Date.now() - formLoadTime
 
-  let formSubmitTime = new Date().getTime();
-  let timeTaken = formSubmitTime - formLoadTime;
-  
-  if (timeTaken < 3000 || website) {
-    form.reset();
-    statusEl.textContent = "Thanks, we'll be in touch within one business day.";
-    statusEl.classList.add('form-status--success');
-    button.disabled = false;
-    return
-  }
-  
   try {
     const response = await fetch('/contact', {
       method: 'POST',
