@@ -2,10 +2,18 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('/Fonts/Inter-VariableFont_opsz,wght.ttf'),
-       url('/Fonts/Inter-Italic-VariableFont_opsz,wght.ttf');
+  src: url('/Fonts/Inter-400.woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/Fonts/Inter-700.woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Work-Experience-1\public\Fonts\Inter-VariableFont_opsz,wght.ttf */
@@ -702,6 +710,10 @@ img {
 .contact-aside p {
   color: var(--ink-soft);
   margin: 0;
+}
+
+#website {
+  display: none;
 }
 
 /* Footer */
