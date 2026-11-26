@@ -14,19 +14,6 @@ form.addEventListener('submit', async (event) => {
   const data = Object.fromEntries(new FormData(form));
   data.timeTaken = Date.now() - formLoadTime
 
-  // const website = document.getElementById('website').value;
-
-  // let formSubmitTime = new Date().getTime();
-  // let timeTaken = formSubmitTime - formLoadTime;
-  
-  // if (timeTaken < 3000 || website) {
-  //   form.reset();
-  //   statusEl.textContent = "Thanks, we'll be in touch within one business day.";
-  //   statusEl.classList.add('form-status--success');
-  //   button.disabled = false;
-  //   return
-  // }
-  
   try {
     const response = await fetch('/contact', {
       method: 'POST',
