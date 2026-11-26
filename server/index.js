@@ -10,6 +10,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', 'public'), { extensions: ['html'] }));
 
 app.post('/contact', (req, res) => {
+  if (req.body.timeTaken < 3000 || req.body.website) {
+    return res.json({ ok: true });
+  }
+
   const name = (req.body.name || '').trim();
   const email = (req.body.email || '').trim();
   const message = (req.body.message || '').trim();
